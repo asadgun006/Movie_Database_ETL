@@ -5,18 +5,13 @@ from RangeSlider.RangeSlider import RangeSliderH as rs
 from RangeSlider.RangeSlider import RangeSliderH as rs2
 
 
-client = pymongo.MongoClient("mongodb+srv://agundra001:Final_Project_1@pythonproject.v3r1sg2.mongodb.net/?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://agundra001:[environment_variable]@pythonproject.v3r1sg2.mongodb.net/?retryWrites=true&w=majority")
 disneyAndMarvelDatabase = client['DisneyAndMarvelDatabase']
 disney_collection = disneyAndMarvelDatabase['disney_movies']
 marvel_collection = disneyAndMarvelDatabase['marvel_movies']
 
 window = tk.Tk()
-#
 
-# HEIGHT = 400
-# WIDTH = 800
-# canvas = tk.Canvas(window, height=HEIGHT, width=WIDTH)
-# canvas.pack()
 
 frame = tk.Frame(window)
 frame.place(relheight=1, relwidth=1)
@@ -83,12 +78,6 @@ def newWindow():
     scrollbarv.pack(side="right", fill="y")
     textWindow = tk.Text(anotherWindow, bg='#cce0ff', yscrollcommand=scrollbarv.set, xscrollcommand=scrollbarh.set, wrap="none", font=("Bahnschrift Light", 14))
     textWindow.pack(expand=True, fill='both')
-    # myFile = open("marvel_data_refreshed.json", encoding="utf-8")
-    # marvel_file = json.load(myFile)
-    # for name in marvel_file:
-    #     for key, value in name.items():
-    #         textWindow.insert(tk.END, f"{key}: {value}\n")
-    #     textWindow.insert(tk.END, "\n")
     if disneyCheckBoxVar.get() & marvelCheckBoxVar.get():
         joinedList = []
         if yearCheckBoxVar.get() & ratingCheckBoxVar.get():
