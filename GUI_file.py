@@ -4,7 +4,7 @@ from PIL import ImageTk, Image
 from RangeSlider.RangeSlider import RangeSliderH as rs
 
 
-client = pymongo.MongoClient("mongodb+srv://agundra001:Final_Project_1@pythonproject.v3r1sg2.mongodb.net/?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://agundra001:[environment_variable]@pythonproject.v3r1sg2.mongodb.net/?retryWrites=true&w=majority")
 disneyAndMarvelDatabase = client['DisneyAndMarvelDatabase']
 disney_collection = disneyAndMarvelDatabase['disney_data']
 marvel_collection = disneyAndMarvelDatabase['marvel_data']
