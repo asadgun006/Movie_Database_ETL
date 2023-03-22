@@ -136,7 +136,7 @@ for name in info_box_list:
 
 def extract_movie_info(movie_title):
     api_url = "http://www.omdbapi.com/?"
-    api_extensions = {"apikey": "7b878af4", "t": movie_title}
+    api_extensions = {"apikey": "[api_key]", "t": movie_title}
     extensions_encoded = urllib.parse.urlencode(api_extensions)
     full_url = api_url + extensions_encoded
     return requests.get(full_url).json()
@@ -170,7 +170,7 @@ for name in info_box_list:
                 if select == ",":
                     value.remove(select)
 
-client = pymongo.MongoClient("mongodb+srv://agundra001:Final_Project_1@pythonproject.v3r1sg2.mongodb.net/?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://agundra001:[environment_variable]@pythonproject.v3r1sg2.mongodb.net/?retryWrites=true&w=majority")
 disneyAndMarvelDatabase = client['DisneyAndMarvelDatabase']
 disney_collection = disneyAndMarvelDatabase['disney_data']
 disney_collection.insert_many(info_box_list)
