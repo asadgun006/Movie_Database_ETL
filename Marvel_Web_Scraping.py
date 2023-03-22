@@ -144,7 +144,7 @@ for name in movie_and_series_data:
 
 def extract_movie_info(movie_title):
     api_url = "http://www.omdbapi.com/?"
-    api_extensions = {"apikey": "7b878af4", "t": movie_title}
+    api_extensions = {"apikey": "[api_key]", "t": movie_title}
     extensions_encoded = urllib.parse.urlencode(api_extensions)
     full_url = api_url + extensions_encoded
     return requests.get(full_url).json()
@@ -177,7 +177,7 @@ for name in movie_and_series_data:
                     value.remove(select)
 
 
-client = pymongo.MongoClient("mongodb+srv://agundra001:Final_Project_1@pythonproject.v3r1sg2.mongodb.net/?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://agundra001:[enviroment_variable]@pythonproject.v3r1sg2.mongodb.net/?retryWrites=true&w=majority")
 disneyAndMarvelDatabase = client['DisneyAndMarvelDatabase']
 marvel_collection = disneyAndMarvelDatabase['marvel_data']
 marvel_collection.insert_many(movie_and_series_data)
